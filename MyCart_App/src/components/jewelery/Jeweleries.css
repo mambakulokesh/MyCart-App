@@ -1,0 +1,17 @@
+.jeweleryContainer{
+    padding: 30px;
+}
+.jewelery h1{
+    font-size: 35px;
+    color: navy;
+}
+.jewelery p{
+    font-size: 17px;
+    /* padding: 20px 0; */
+}
+
+/* .jeweleryContainer{
+    display: flex;
+    gap: 25px;
+    margin: 50px 0;
+} */

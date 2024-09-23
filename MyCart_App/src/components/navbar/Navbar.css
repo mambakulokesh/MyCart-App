@@ -1,0 +1,48 @@
+.navbar{
+    height: 12vh;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+}
+.links{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.links a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.features{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.features a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.features a i{
+    font-size: 1.3rem;
+}
+a:hover{
+    color: skyblue;
+    transition: .5s ease-in-out;
+}
