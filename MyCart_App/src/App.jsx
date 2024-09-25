@@ -29,6 +29,7 @@ function App() {
         <Route path={"/womens"} element={<Womens />} />
 
         <Route path={"/profile"} element={<Profile />}>
+          <Route index path='' element={<Personal />} />
           <Route path={"personaldetails"} element={<Personal />} />
           <Route path={"professionaldetails"} element={<Professional />} />
           <Route path={"educationaldetails"} element={<Educational />} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Profile() {
   return (
@@ -41,7 +41,9 @@ function Profile() {
             </div>
           </div>
         </div>
-        <div className="col-8">Right</div>
+        <div className="col-8">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 function Personal() {
   return (
-    <div className="container text-primary">Personal Details Component</div>
+    <div className="container fs-4 mt-5 text-primary">
+      Personal Details Component
+    </div>
   );
 }
 
