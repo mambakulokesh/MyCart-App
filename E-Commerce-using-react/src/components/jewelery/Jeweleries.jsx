@@ -23,6 +23,37 @@ function Jeweleries() {
   return (
     <div className="jeweleryContainer">
       <h1>Jewelery</h1>
+
+      <div
+        id="carouselExampleSlidesOnly"
+        className="carousel slide my-3"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/ec29d9b3b0a537d1.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/1e31c9d65e3b4592.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/df5fc1c522d37039.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
       <p className="mt-3">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
         aspernatur obcaecati possimus consectetur vero quaerat optio sequi
@@ -41,18 +72,17 @@ function Jeweleries() {
         getJewelery
       </button> */}
 
-      {
-      jewelerypro.length > 0 ? (
+      {jewelerypro.length > 0 ? (
         <div className="d-flex flex-wrap justify-content-evenly gap-3 mt-4">
-          {
-          jewelerypro.map((jeweleryItems, index) => {
+          {jewelerypro.map((jeweleryItems, index) => {
             return <Jewelery key={index} jeweleryItems={jeweleryItems} />;
           })}
         </div>
       ) : (
-        <h3 style={{textAlign: "center", marginTop : "50px", color : "grey"}}>No Jewelery Data</h3>
+        <h3 style={{ textAlign: "center", marginTop: "50px", color: "grey" }}>
+          No Jewelery Data
+        </h3>
       )}
-
     </div>
   );
 }

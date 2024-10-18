@@ -26,6 +26,37 @@ function Womens() {
   return (
     <div className="womensContainer">
       <h1>Womens Fashion</h1>
+
+      <div
+        id="carouselExampleSlidesOnly"
+        className="carousel slide my-3"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/ec29d9b3b0a537d1.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/1e31c9d65e3b4592.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/df5fc1c522d37039.jpg?q=20"
+              className="d-block w-100"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit hic ab
         obcaecati, nemo in dicta ipsa atque quis aspernatur quasi nihil, ratione
@@ -42,13 +73,10 @@ function Womens() {
       {/* <button onClick={getWomensFashion} className="btn btn-outline-primary">getWomensFashion</button> */}
 
       <div className="d-flex flex-wrap justify-content-evenly gap-2 mt-4">
-        {
-          womensProducts.map((womensItems)=>{
-            return <WomensProducts womensItems={womensItems} />
-          })
-        }
+        {womensProducts.map((womensItems) => {
+          return <WomensProducts womensItems={womensItems} />;
+        })}
       </div>
-
     </div>
   );
 }

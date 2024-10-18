@@ -26,10 +26,10 @@ function Navbar() {
         <Link to="/wishlist">
           <i className="bi bi-heart-fill"></i>
         </Link>
-        <button className="btn btn-outline-info">Logout</button>
+        <button className="btn btn-outline-info">Logoin</button>
       </div>
     </div>
   );
 }
 
-export default Navbar
+export default Navbar;

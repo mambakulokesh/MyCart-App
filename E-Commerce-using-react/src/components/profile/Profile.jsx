@@ -12,30 +12,30 @@ function Profile() {
             <div className="row">
               <div className="col-12">
                 <Link
-                  to={"personaldetails"}
+                  to={"Account-details"}
                   className="text-white text-decoration-none"
                 >
-                  Personal Details
+                  My Account
                 </Link>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                 <Link
-                  to={"professionaldetails"}
+                  to={"Address-details"}
                   className="text-white text-decoration-none"
                 >
-                  Professional Details
+                  Address Details
                 </Link>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                 <Link
-                  to={"educationaldetails"}
+                  to={"Help-center"}
                   className="text-white text-decoration-none"
                 >
-                  Education Details
+                  Help Center
                 </Link>
               </div>
             </div>
