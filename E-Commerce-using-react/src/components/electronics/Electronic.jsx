@@ -1,9 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Electronic({ product }) {
-    const [addInCart, setAddInCart] = useState(true);
+    const [addInCart, setAddInCart] = useState(false);
     const {image, title, price, rating, id} = product;
+
+
+
+    const addToCart = ()=>{
+      axios.post("http://localhost:3000/addToCart", product).then(()=>{
+        alert("product is added to Cart")
+        setAddInCart(true);
+      }).catch(()=>{
+        alert("Product already in cart");
+      });
+      
+    }
 
   return (
     <div className="card w-25 m-4">
@@ -15,12 +28,16 @@ function Electronic({ product }) {
         <p>$ {price}</p>
         <p>&#9733; &#9733; &#9733; &#9733; &#9733; {rating.rate}</p>
         <Link to={`/productdetails/${id}`}>
-          <button className="btn btn-outline-primary mx-1">Product Details</button>
+          <button className="btn btn-outline-primary mx-1">
+            Product Details
+          </button>
         </Link>
-       {
-        addInCart ? <button className="btn btn-outline-warning mx-1">Add to Cart</button> :
+        {
+        addInCart ? (
           <button className="btn btn-outline-danger mx-1">Remove</button>
-       }
+        ) : (
+          <button className="btn btn-outline-warning mx-1" onClick={addToCart}>Add to Cart</button>
+        )}
       </div>
     </div>
   );

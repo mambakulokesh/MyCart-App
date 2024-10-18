@@ -11,6 +11,8 @@ import Personal from './components/user-deatils/Personal';
 import Professional from './components/user-deatils/Professional';
 import Educational from './components/user-deatils/Educational';
 
+import Cart from './components/cart/Cart';
+
 import PageNotFound from './components/pagenotfound/PageNotFound';
 
 import {Route, Routes} from "react-router-dom";
@@ -34,6 +36,8 @@ function App() {
           <Route path={"professionaldetails"} element={<Professional />} />
           <Route path={"educationaldetails"} element={<Educational />} />
         </Route>
+
+        <Route path={"/cart"} element={<Cart />} />
 
         <Route path={"/productdetails/:id"} element={<ProductDetails />} />
         <Route path={"*"} element={<PageNotFound />} />

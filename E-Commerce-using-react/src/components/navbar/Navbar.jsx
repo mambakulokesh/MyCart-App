@@ -20,10 +20,10 @@ function Navbar() {
         <Link to="/profile">
           <i className="bi bi-person-circle"></i>
         </Link>
-        <Link to="#home">
+        <Link to="/cart">
           <i className="bi bi-bag-check-fill"></i>
         </Link>
-        <Link to="#home">
+        <Link to="/wishlist">
           <i className="bi bi-heart-fill"></i>
         </Link>
         <button className="btn btn-outline-info">Logout</button>
