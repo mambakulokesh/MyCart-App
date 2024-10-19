@@ -28,16 +28,20 @@ function Electronic({ product }) {
         <p>$ {price}</p>
         <p>&#9733; &#9733; &#9733; &#9733; &#9733; {rating.rate}</p>
         <Link to={`/productdetails/${id}`}>
-          <button className="btn btn-outline-primary mx-1">
+          <button className="btn btn-outline-primary mx-2">
             Product Details
           </button>
         </Link>
-        {
-        addInCart ? (
+        {addInCart ? (
           <button className="btn btn-outline-danger mx-1">Remove</button>
         ) : (
-          <button className="btn btn-outline-warning mx-1" onClick={addToCart}>Add to Cart</button>
+          <button className="btn btn-outline-warning mx-2" onClick={addToCart}>
+            Add to Cart
+          </button>
         )}
+        <button className="btn btn-outline-danger mx-2 py-1 px-2" style={{fontSize : "15px"}}>
+          <i className="bi bi-heart p-0 m-0"></i>
+        </button>
       </div>
     </div>
   );

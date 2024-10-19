@@ -29,7 +29,7 @@ function Account() {
                 </button>
               </Link>
               <Link>
-                <button className="btn btn-danger">Sign Out</button>
+                <button className="btn btn-danger">Log Out</button>
               </Link>
             </div>
           </div>

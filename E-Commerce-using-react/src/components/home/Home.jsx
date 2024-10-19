@@ -1,13 +1,29 @@
 import "./Home.css";
+import { categoriesData } from "../data/CategoryData";
 
 function Home() {
   return (
     <div className="HomeContainer">
-      <h1 className="text-secondary">Home</h1>
+
+
+      <div className="container d-flex text-center">
+        {
+          categoriesData.map((item, index)=>{
+            return <div key={index} className="container-fluid">
+              <img src={item.image} alt="" width={"75px"} height={"75px"}/>
+              <h6>{item.title}</h6>
+            </div>
+
+          })
+        }
+
+      </div>
+
+
 
       <div
         id="carouselExampleSlidesOnly"
-        className="carousel slide my-3"
+        className="carousel slide my-3 container"
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
@@ -34,6 +50,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      
 
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam labore
