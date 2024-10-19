@@ -7,7 +7,6 @@ function Navbar() {
       <div className="logo">
         <Link to="/">My-Store</Link>
       </div>
-
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/electronics">Electronics</Link>
