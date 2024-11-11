@@ -41,7 +41,7 @@ function Home() {
 
       <div
         id="carouselExampleSlidesOnly"
-        className="carousel slide my-3 container"
+        className="carousel slide container-fluid"
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
@@ -69,7 +69,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container-fluid">
         <h2 className="text-center p-4">All Categories</h2>
         <div className="row d-flex flex-wrap justify-content-evenly gap-4">
           {products.map((prod, id) => {

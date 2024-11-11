@@ -18,6 +18,8 @@ import Account from './components/user-deatils/Account';
 import Address from './components/user-deatils/Address';
 import Help from './components/user-deatils/Help';
 
+import Footer from './components/footer/Footer';
+
 function App() {
 
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path={"/productdetails/:id"} element={<ProductDetails />} />
         <Route path={"*"} element={<PageNotFound />} />
       </Routes>
+
+      <Footer />
     
    </div>
   )
