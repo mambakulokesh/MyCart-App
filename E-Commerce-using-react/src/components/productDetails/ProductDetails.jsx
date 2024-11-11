@@ -1,24 +1,25 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ProductDetails() {
   const [item, setItem] = useState({
-    "id" : 0,
-    "image": "",
-    "description": "",
-    "price": 0,
-    "title": "",
-    "category": "",
-    "rating": {
-      "rate": 0,
-      "count": 0
-    }
+    id: 0,
+    image: "",
+    description: "",
+    price: 0,
+    title: "",
+    category: "",
+    rating: {
+      rate: 0,
+      count: 0,
+    },
   });
 
   let { id } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
     axios
       .get(`http://localhost:3000/products/${id}`)
       .then((res) => {
@@ -29,9 +30,7 @@ function ProductDetails() {
         console.log(error);
         alert("Something Went Wrong");
       });
-
-  }, [])
-    
+  }, []);
 
   return (
     <div className="container mt-5">
@@ -49,8 +48,12 @@ function ProductDetails() {
             No. of Available Products : <b>{item.rating.count}</b>
           </p>
           <p>{item.description}</p>
-          <button className="btn btn-warning me-5">Add to Cart</button>
-          <button className="btn btn-secondary me-5">Back to Home</button>
+          <Link to="/cart" className="btn btn-warning me-5">
+            Add to Cart
+          </Link>
+          <Link to="/" className="btn btn-secondary me-5">
+            Back to Home
+          </Link>
         </div>
       </div>
     </div>

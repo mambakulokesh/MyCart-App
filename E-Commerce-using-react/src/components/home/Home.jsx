@@ -1,25 +1,43 @@
+import { useEffect, useState } from "react";
 import "./Home.css";
-import { categoriesData } from "../data/CategoryData";
+import { Link } from "react-router-dom";
+// import { categoriesData } from "../data/CategoryData";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
+  const getAllProducts = () => {
+    const allProducts = fetch("http://localhost:3000/products");
+
+    allProducts
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // console.log(res.data);
+        setProducts(data);
+      })
+      .catch((error) => {
+        alert("Something Went Wrong");
+        console.log(error);
+      });
+  };
+
   return (
     <div className="HomeContainer">
-
-
-      <div className="container d-flex text-center">
-        {
-          categoriesData.map((item, index)=>{
-            return <div key={index} className="container-fluid">
-              <img src={item.image} alt="" width={"75px"} height={"75px"}/>
+      {/* <div className="container d-flex text-center">
+        {categoriesData.map((item, index) => {
+          return (
+            <div key={index} className="container-fluid">
+              <img src={item.image} alt="" width={"75px"} height={"75px"} />
               <h6>{item.title}</h6>
             </div>
-
-          })
-        }
-
-      </div>
-
-
+          );
+        })}
+      </div> */}
 
       <div
         id="carouselExampleSlidesOnly"
@@ -51,21 +69,40 @@ function Home() {
         </div>
       </div>
 
-      
+      <div className="container">
+        <h2 className="text-center p-4">All Categories</h2>
+        <div className="row d-flex flex-wrap justify-content-evenly gap-4">
+          {products.map((prod, id) => {
+            return (
+              <div
+                key={id}
+                className="card shadow text-center"
+                style={{ width: "22rem" }}
+              >
+                <img
+                  src={prod.image}
+                  className="card-img-top p-4"
+                  alt="..."
+                  width={"100%"}
+                  height={"300px"}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{prod.title}</h5>
+                  <p className="card-text">$ {prod.price}</p>
+                  <p className="card-text"> {prod.rating.rate} ⭐</p>
 
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam labore
-        consectetur quod amet facere ea eligendi suscipit omnis recusandae?
-        Quisquam eum voluptas dolorum, perferendis voluptatum incidunt ad
-        tempore labore expedita repellat maiores odio soluta nisi aperiam animi
-        alias laudantium corporis cum doloremque sequi impedit ullam debitis
-        optio! Obcaecati repellat harum aliquid inventore officia exercitationem
-        numquam nobis minus molestiae soluta, delectus, voluptas, aspernatur ex
-        magnam. Nobis, rem. Labore accusantium esse quos officiis, animi modi
-        necessitatibus facere autem eos iure, perspiciatis et, ullam eum quam
-        amet. Ab ipsam animi fugit blanditiis, voluptates, dolores sed quis
-        adipisci nobis dolor consectetur, totam ipsum veritatis.
-      </p>
+                  <Link
+                    to={`/productdetails/${id}`}
+                    className="btn btn-outline-dark m-2"
+                  >
+                    Buy Now
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

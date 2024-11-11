@@ -6,7 +6,7 @@ function MensProducts( { mensItems } ) {
   return (
     <div className="card w-25 m-4">
       <div className="card-header">
-        <img src={image} alt="" width="100%" height={"200px"} />
+        <img src={image} alt="" width="100%" height={"300px"} />
       </div>
       <div className="card-body">
         <h5>{title}</h5>
