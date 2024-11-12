@@ -33,12 +33,12 @@ function ProductDetails() {
   }, []);
 
   return (
-    <div className="container mt-5">
+    <div className="container my-5">
       <div className="row">
-        <div className="col-6">
+        <div className="col-6 p-4">
           <img src={item.image} alt="" width={"100%"} height={"500px"} />
         </div>
-        <div className="col-6">
+        <div className="col-6 p-4">
           <h3>{item.title}</h3>
           <p>{item.rating.rate}&#9733;</p>
           <p>
